@@ -14,15 +14,15 @@ struct HtmlResponse<'a> {
 
 #[tokio::main]
 async fn main() {
-    let matches = App::new("Akatsuki Switcher cli")
+    let matches = App::new("Lumilous Switcher cli")
         .subcommand(
             SubCommand::with_name("switch")
                 .about("Switch between servers")
                 .help(
-                    "Switch to either `bancho` or `akatsuki` or custom defined by --ip.",
+                    "Switch to either `bancho` or `lumilous` or custom defined by --ip.",
                 )
                 .subcommand(
-                    SubCommand::with_name("akatsuki")
+                    SubCommand::with_name("lumilous")
                 )
                 .subcommand(
                     SubCommand::with_name("bancho")
@@ -53,7 +53,7 @@ async fn main() {
             std::process::exit(0);
         }
 
-        if matches.is_present("akatsuki") {
+        if matches.is_present("lumilous") {
             switcher::switch_to(switcher::fetch_ip().await.unwrap().trim()).unwrap();
         } else if matches.is_present("bancho") {
             switcher::remove_old().unwrap();
@@ -101,7 +101,7 @@ async fn main() {
 
             let toast = ToastNotification::create_toast_notification(&toast_xml).unwrap();
 
-            ToastNotificationManager::create_toast_notifier_with_id(&FastHString::new("Akatsuki Switcher")).unwrap().unwrap().show(&toast).unwrap();
+            ToastNotificationManager::create_toast_notifier_with_id(&FastHString::new("Lumilous Switcher")).unwrap().unwrap().show(&toast).unwrap();
 
             std::thread::sleep(std::time::Duration::from_secs(5));
             return;
@@ -109,7 +109,7 @@ async fn main() {
     }
 
     web_view::builder()
-        .title("Akatsuki Switcher")
+        .title("Lumilous Switcher")
         .content(Content::Html(include_str!("../views/index.html")))
         .size(320, 480)
         .resizable(false)

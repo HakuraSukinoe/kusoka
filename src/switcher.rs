@@ -90,7 +90,7 @@ pub fn switch_to(ip: &str) -> std::io::Result<()> {
 }
 
 pub async fn fetch_ip() -> Result<String, reqwest::Error> {
-    let ip = reqwest::get("https://old.akatsuki.pw/ips.txt")
+    let ip = reqwest::get("https://old.lumilous.pw/ips.txt")
         .await?
         .text()
         .await?;
@@ -99,7 +99,7 @@ pub async fn fetch_ip() -> Result<String, reqwest::Error> {
 }
 
 pub async fn fetch_cert() -> Result<String, reqwest::Error> {
-    let cert = reqwest::get("https://old.akatsuki.pw/akatsuki.crt")
+    let cert = reqwest::get("https://old.lumilous.pw/lumilous.crt")
         .await?
         .text()
         .await?;
@@ -111,7 +111,7 @@ pub async fn install_cert(cert_data: &str) {
     #[cfg(windows)]
     {
         let mut file = std::env::temp_dir();
-        file.push("akatsuki.crt");
+        file.push("lumilous.crt");
 
         let path = file.as_path();
 

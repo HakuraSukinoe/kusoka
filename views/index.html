@@ -166,7 +166,7 @@
     </style>
 </head>
 <body>
-    <img id="logo" src="https://akatsuki.pw/static/logos/logo.png">
+    <img id="logo" src="https://lumilous.pw/static/logos/logo.png">
 
     <div id="notification" class="hidden">
         <div class="cls" onclick="closeNotification()">X</div>
@@ -178,9 +178,9 @@
     </div>
 
     <div id="links">
-        <a onclick="invokeNative('open_browser', ['https:\/\/akatsuki.pw'])">Website</a>
-        <a onclick="invokeNative('open_browser', ['https:\/\/discord.gg/akatsuki'])">Discord</a>
-        <a onclick="invokeNative('open_browser', ['https:\/\/akatsuki.pw/doc/tos'])">Terms of Service</a>
+        <a onclick="invokeNative('open_browser', ['https:\/\/lumilous.pw'])">Website</a>
+        <a onclick="invokeNative('open_browser', ['https:\/\/discord.gg/lumilous'])">Discord</a>
+        <a onclick="invokeNative('open_browser', ['https:\/\/lumilous.pw/doc/tos'])">Terms of Service</a>
     </div>
 
     <div id="loadingSpin" class="hidden">
@@ -214,8 +214,8 @@
         const notificationStates = {
             "error_install_cert":  "We could not install the certificate! Please check #faq on our Discord for more information!",
             "error_install_ip":    "We could not modify your hosts file! Please check #faq on our Discord for more information!",
-            "error_download_ip":   "We could not fetch the ips! Please check https://status.akatsuki.pw for more information or ask in #help in our discord!",
-            "error_download_cert": "We could not fetch the certificate! Please check https://status.akatsuki.pw for more information or ask in #help in our discord!",
+            "error_download_ip":   "We could not fetch the ips! Please check https://status.lumilous.pw for more information or ask in #help in our discord!",
+            "error_download_cert": "We could not fetch the certificate! Please check https://status.lumilous.pw for more information or ask in #help in our discord!",
             "ok":                  "Switch was successful! Please make sure to restart your client."
         }
         let currentState = "none";
@@ -261,7 +261,7 @@
         const fetchIPs = async () => {
             setState("download_ip");
             
-            const ips = (await fetch("https://old.akatsuki.pw/ips.txt")).text();
+            const ips = (await fetch("https://old.lumilous.pw/ips.txt")).text();
             // TODO: make a better way to handle IPs by as example include hostnames
             // so we can use bm6.ppy.sh etc
             return ips;
@@ -270,7 +270,7 @@
         const fetchCertificate = async () => {
             setState("download_cert");
             
-            const certData = (await fetch("https://old.akatsuki.pw/akatsuki.crt")).text();
+            const certData = (await fetch("https://old.lumilous.pw/lumilous.crt")).text();
             return certData;
         }
 
