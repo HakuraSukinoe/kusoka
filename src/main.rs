@@ -30,7 +30,7 @@ async fn main() {
                 .arg(
                     Arg::with_name("ip")
                         .short("i")
-                        .help("Switch to custom servers for debugging purposes only."),
+                        .help("Switch to custom servers for debugging purposes"),
                 ),
         )
         .subcommand(
