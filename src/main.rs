@@ -96,8 +96,8 @@ async fn main() {
 
             let toast_text_elements = toast_xml.get_elements_by_tag_name(&FastHString::new("text")).unwrap().unwrap();
 
-            toast_text_elements.item(0).unwrap().unwrap().append_child(&toast_xml.create_text_node(&FastHString::new("Pws nyo :c")).unwrap().unwrap().query_interface::<IXmlNode>().unwrap()).unwrap();
-            toast_text_elements.item(1).unwrap().unwrap().append_child(&toast_xml.create_text_node(&FastHString::new("Pwease do nyot wun this appwication as Adminyistwatow >w<  othewwise ouw fancy fwontend bweaks :c")).unwrap().unwrap().query_interface::<IXmlNode>().unwrap()).unwrap();
+            toast_text_elements.item(0).unwrap().unwrap().append_child(&toast_xml.create_text_node(&FastHString::new("เมี๊ยว T_T!!")).unwrap().unwrap().query_interface::<IXmlNode>().unwrap()).unwrap();
+            toast_text_elements.item(1).unwrap().unwrap().append_child(&toast_xml.create_text_node(&FastHString::new("ถ้าเจ้าจะเปิดโปรแกรมนี้เจ้าต้องอย่ารันแบบ Administrator เพราะจะทำให้ FrontEnd เจ๊งกระโบ้งตู้มตะรู้มตู้มๆแบบนี้เลยน้า เมี้ยว~~")).unwrap().unwrap().query_interface::<IXmlNode>().unwrap()).unwrap();
 
             let toast = ToastNotification::create_toast_notification(&toast_xml).unwrap();
 
