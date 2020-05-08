@@ -17,11 +17,3 @@ jobs:
       run: cargo build --release
     - name: Run tests
       run: cargo test
-    - name: Upload binaries to release
-      uses: svenstaro/upload-release-action@v1-release
-      with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: target/release/hajime.exe
-        asset_name: hajime.exe
-        tag: ${{ github.ref }}
-        overwrite: true
